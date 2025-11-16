@@ -33,7 +33,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 bg-gradient-to-b from-[#0a0a0a] via-[#121212] to-[#0a0a0a]">
+    <section ref={sectionRef} id="our-services" className="relative py-32 px-6 bg-gradient-to-b from-[#0a0a0a] via-[#121212] to-[#0a0a0a]">
       <div className="absolute inset-0 grid-overlay opacity-5" />
 
       <div className="relative max-w-7xl mx-auto">

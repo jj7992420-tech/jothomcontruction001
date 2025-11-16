@@ -45,7 +45,12 @@ const Footer = () => {
               ].map((service, idx) => (
                 <li key={idx}>
                   <a
-                    href="#"
+                    href="#our-services"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.querySelector('#our-services');
+                      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
                     className="text-gray-400 hover:text-[#c72c7e] transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <span className="w-0 h-px bg-[#c72c7e] group-hover:w-4 transition-all duration-300" />
