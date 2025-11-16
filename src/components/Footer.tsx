@@ -63,7 +63,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { label: 'About Us', href: '#who-we-are' },
-                { label: 'Our Projects', href: '#' },
+                { label: 'Our Projects', href: '#featured-projects' },
                 { label: 'Careers', href: '#' },
                 { label: 'Safety Standards', href: '#' },
                 { label: 'Certifications', href: '#' },

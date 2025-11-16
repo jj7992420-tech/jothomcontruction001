@@ -57,7 +57,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 bg-[#0a0a0a]">
+    <section ref={sectionRef} id="featured-projects" className="relative py-32 px-6 bg-[#0a0a0a]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1a1a1a_1px,transparent_1px)] bg-[length:50px_50px] opacity-20" />
 
       <div className="relative max-w-7xl mx-auto">
