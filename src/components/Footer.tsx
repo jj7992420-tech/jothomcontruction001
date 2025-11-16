@@ -73,6 +73,13 @@ const Footer = () => {
                   <li key={idx}>
                     <a
                       href={item.href}
+                      onClick={(e) => {
+                        if (item.href.startsWith('#')) {
+                          e.preventDefault();
+                          const element = document.querySelector(item.href);
+                          element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
                       className="text-gray-400 hover:text-[#00a4b8] transition-colors duration-300 flex items-center gap-2 group"
                     >
                       <span className="w-0 h-px bg-[#00a4b8] group-hover:w-4 transition-all duration-300" />
