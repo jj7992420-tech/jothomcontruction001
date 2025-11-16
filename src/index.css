@@ -84,6 +84,31 @@
   .bg-gradient-radial {
     background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
   }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      #00a4b8 0%,
+      #c72c7e 25%,
+      #00a4b8 50%,
+      #c72c7e 75%,
+      #00a4b8 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 *::-webkit-scrollbar {

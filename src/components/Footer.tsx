@@ -1,7 +1,14 @@
 import { Facebook, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { useState } from 'react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [shimmerActive, setShimmerActive] = useState(false);
+
+  const handleContactClick = () => {
+    setShimmerActive(true);
+    setTimeout(() => setShimmerActive(false), 2000);
+  };
 
   return (
     <footer className="relative bg-black border-t border-gray-900">
@@ -101,19 +108,42 @@ const Footer = () => {
               Contact
             </h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-gray-400">
+              <li
+                className={`flex items-start gap-3 text-gray-400 cursor-pointer transition-all duration-300 ${shimmerActive ? 'shimmer' : ''}`}
+                onClick={handleContactClick}
+              >
                 <MapPin className="w-5 h-5 text-[#00a4b8] mt-1 flex-shrink-0" />
                 <span>8793 Pigmelon Street, Ria Vista, Pretoria, 0175</span>
               </li>
-              <li className="flex items-center gap-3 text-gray-400">
+              <li
+                className={`flex items-center gap-3 text-gray-400 cursor-pointer transition-all duration-300 ${shimmerActive ? 'shimmer' : ''}`}
+                onClick={handleContactClick}
+              >
                 <Phone className="w-5 h-5 text-[#c72c7e] flex-shrink-0" />
-                <a href="tel:+27825829847" className="hover:text-[#c72c7e] transition-colors duration-300">
+                <a
+                  href="tel:+27825829847"
+                  className="hover:text-[#c72c7e] transition-colors duration-300"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleContactClick();
+                  }}
+                >
                   +27 82 582 9847
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-gray-400">
+              <li
+                className={`flex items-center gap-3 text-gray-400 cursor-pointer transition-all duration-300 ${shimmerActive ? 'shimmer' : ''}`}
+                onClick={handleContactClick}
+              >
                 <Mail className="w-5 h-5 text-[#00a4b8] flex-shrink-0" />
-                <a href="mailto:thomasngilazi@gmail.com" className="hover:text-[#00a4b8] transition-colors duration-300">
+                <a
+                  href="mailto:thomasngilazi@gmail.com"
+                  className="hover:text-[#00a4b8] transition-colors duration-300"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleContactClick();
+                  }}
+                >
                   thomasngilazi@gmail.com
                 </a>
               </li>
